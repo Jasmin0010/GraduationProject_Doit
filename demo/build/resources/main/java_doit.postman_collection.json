@@ -1,0 +1,375 @@
+{
+	"info": {
+		"_postman_id": "1862c87c-130c-45ef-afe0-ac116b90ef54",
+		"name": "java_doit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26707111"
+	},
+	"item": [
+		{
+			"name": "/auth/signin",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"admin@example.com\",\n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{API_HOST}}/auth/signin",
+					"protocol": "http",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/auth/signup",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"admin@example.com\",\n    \"username\": \"admin\",\n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{API_HOST}}/auth/signup",
+					"protocol": "http",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/todo/test",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwt_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{API_HOST}}/todo/test",
+					"protocol": "http",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"todo",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/worksheet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwt_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{API_HOST}}/worksheet",
+					"protocol": "http",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"worksheet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/worksheet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwt_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 2,\n    \"userId\": \"ff8080818e47d668018e47dbc49b0000\",\n    \"title\": \"Do it! YES!\",\n    \"content\": \"oh yes\",\n    \"date\": \"2024-03-17\",\n    \"timeSpent\": null,\n    \"status\": null,\n    \"created\": \"2024-03-17 16:33:16\",\n    \"updated\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{API_HOST}}/worksheet",
+					"protocol": "http",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"worksheet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/worksheet/by-date",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwt_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{API_HOST}}/worksheet/by-date?date=2024-03-17",
+					"protocol": "http",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"worksheet",
+						"by-date"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2024-03-17"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/worksheet/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwt_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{API_HOST}}/worksheet/1",
+					"protocol": "http",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"worksheet",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/workoutvideo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwt_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{API_HOST}}/workoutvideo",
+					"protocol": "http",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"workoutvideo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/workoutvideo Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwt_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"ff8080818e47d668018e47dbc49b0000\",\n    \"videoId\": \"asdfasdfsadf\",\n    \"platform\": \"youtube\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{API_HOST}}/workoutvideo",
+					"protocol": "http",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"workoutvideo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/workoutvideo Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwt_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://{{API_HOST}}/workoutvideo",
+					"protocol": "http",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"workoutvideo"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmZjgwODA4MThlNDdkNjY4MDE4ZTQ3ZGJjNDliMDAwMCIsImlzcyI6ImRlbW8gYXBwIiwiaWF0IjoxNzEwNjU2MTU3LCJleHAiOjE3MTA3NDI1NTd9.IecocNlRPMGRRJaLo6PTlLcDAOMkEKZxpePmHrFamspuihgL_hWaCq2AbAfL-Ytslojnofyw_LBrsMXVgatrYw",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_HOST",
+			"value": "localhost:8080"
+		},
+		{
+			"key": "jwt_token",
+			"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmZjgwODA4MThlNDdkNjY4MDE4ZTQ3ZGJjNDliMDAwMCIsImlzcyI6ImRlbW8gYXBwIiwiaWF0IjoxNzEwNjU2OTg4LCJleHAiOjE3MTA3NDMzODh9.1UZSqG2rDQ68IReEHAIfuH_ZLUOxu49g_hEfhXtuvd1fBDSnsYAVsJyl7-yC2MF1OV6U2mTg6CeMepyEp9GsPQ"
+		}
+	]
+}

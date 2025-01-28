@@ -1,0 +1,22 @@
+.exercise-tracker-container {
+    margin-top: 32px;
+  }
+  
+  .exercise-tracker-grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .exercise-tracker-paper {
+    padding: 16px;
+  }
+  
+  .exercise-tracker-typography {
+    margin-bottom: 16px;
+  }
+  
+  .exercise-tracker-button {
+    margin-top: 16px;
+  }
+  
